@@ -16,7 +16,7 @@ class Comet extends RK.ODESystem {
         this.ax = new RK.Pointer(0.0);
         this.ay = new RK.Pointer(0.0);
 
-        this.rk = new RK.RK(4, RK.Methods.Midpoint, { minDh: 1.0 });
+        this.rk = new RK.RK(4, RK.Methods.Midpoint, { minDh: 0.1 });
         //this.rk = new RK.RK(4, RK.Methods.Euler, { minDh: 1.0 });
         this.odeSetup();
     }
@@ -74,7 +74,7 @@ function calcDrag(vx, vy) {
     var vel = [vx, vy];
     var velUnit = unit(vel);
     var mag = magnitude(vel);
-    var temp = velUnit.multiply(-mag * mag * .00002);
+    var temp = velUnit.multiply(-mag * mag * .00001);
     acc.x = temp[0];
     acc.y = temp[1];
     return acc;
