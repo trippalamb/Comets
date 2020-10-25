@@ -46,12 +46,14 @@ function main() {
                     svg.on('click', createComet);
                     $("#txt-mass").parent().hide();
                     $("#txt-color").parent().show();
+                    $("#mass-hint").hide();
                     starContainer.stars.forEach((s) => s.removeInteraction(svg));
                     break;
                 case "btn-createStar":
                     svg.on('click', createStar);
                     $("#txt-mass").parent().show();
                     $("#txt-color").parent().hide();
+                    $("#mass-hint").hide();
                     starContainer.stars.forEach((s) => s.removeInteraction(svg));
                     break;
                 case "btn-selectStar":
@@ -61,7 +63,7 @@ function main() {
                     })
                     $("#txt-mass").parent().show();
                     $("#txt-color").parent().hide();
-
+                    $("#mass-hint").show();
                     starContainer.stars.forEach((s) => s.makeInteractive(svg));
                     $("#txt-mass").on("change", function () {
 
