@@ -28,13 +28,19 @@
 
 #cursor-options{
     position:absolute;
-    top:0;
-    left:0;
+    top:2%;
+    left:2%;
 }
 
 #global-commands{
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 2%;
+  left: 2%;
+}
+
+.star{
+    transition:0.3s;
+    stroke:black;
+    stroke-width:0;
 }
 

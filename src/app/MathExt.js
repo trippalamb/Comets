@@ -14,7 +14,9 @@ Array.prototype.multiply = function(mul){
 }
 
 function unit(arr){
-    return arr.divide(magnitude(arr));
+    let mag = magnitude(arr);
+    if (mag === 0.0) return arr;
+    else return arr.divide(magnitude(arr));
 }
 
 function magnitude(arr){
