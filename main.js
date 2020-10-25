@@ -61,9 +61,14 @@ function main() {
                     svg.on('click', function () {
                         return 0;
                     })
+
+                    $("#txt-mass").val("0");
+
                     $("#txt-mass").parent().show();
                     $("#txt-color").parent().hide();
                     $("#mass-hint").show();
+
+
                     starContainer.stars.forEach((s) => s.makeInteractive(svg));
                     $("#txt-mass").on("change", function () {
 

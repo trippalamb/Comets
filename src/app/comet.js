@@ -34,9 +34,9 @@ class Comet extends RK.ODESystem {
 
     updateODEs() {
         var ga = calcGrav(this.px.val, this.py.val, this.starContainer.stars);
-        //var da = calcDrag(this.vx.val, this.vy.val);
-        this.ax.val = ga.x;
-        this.ay.val = ga.y;
+        var da = calcDrag(this.vx.val, this.vy.val);
+        this.ax.val = ga.x + da.x;
+        this.ay.val = ga.y + da.y;
 
     }
 
@@ -74,7 +74,7 @@ function calcDrag(vx, vy) {
     var vel = [vx, vy];
     var velUnit = unit(vel);
     var mag = magnitude(vel);
-    var temp = velUnit.multiply(-mag * mag * .000005);
+    var temp = velUnit.multiply(-mag * mag * .00002);
     acc.x = temp[0];
     acc.y = temp[1];
     return acc;
